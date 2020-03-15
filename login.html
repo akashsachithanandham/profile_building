@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
-<html lang="en" >
-<html>
+
+<html lang="en" xml:lang="en">
 <head>
   <title>Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,10 +60,16 @@
           // [END_EXCLUDE]
         });
         // [END authwithemail]
-      }
+      
       document.getElementById('quickstart-sign-in').disabled = true;
-      window.location.href = "home.html";
-    }
+      //window.location.href = "profile.php?username="+email;
+      firebase.auth().onAuthStateChanged(user => {
+  if(user) {
+    window.location = 'home.html'; //After successful login, user will be redirected to home.html
+  }
+    });}}
+
+
     /**
      * Handles the sign up button press.
      */
@@ -160,19 +166,20 @@
           //document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
           //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-          if (!emailVerified) {
-           // document.getElementById('quickstart-verify-email').disabled = false;
-          }
+          // if (!emailVerified) {
+          //  // document.getElementById('quickstart-verify-email').disabled = false;
+          // }
           // [END_EXCLUDE]
-        } else {
-          // User is signed out.
-          // [START_EXCLUDE]
-          //document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          //document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-          //document.getElementById('quickstart-account-details').textContent = 'null';
-          // [END_EXCLUDE]
-        }
-        // [START_EXCLUDE silent]
+        // } else {
+        //   // User is signed out.
+        //   // [START_EXCLUDE]
+        //   //document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+        //   //document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+        //   //document.getElementById('quickstart-account-details').textContent = 'null';
+        //   // [END_EXCLUDE]
+        // }
+        // [START_EXCLUDE silent]}
+      }
         document.getElementById('quickstart-sign-in').disabled = false;
         // [END_EXCLUDE]
       });
@@ -185,7 +192,7 @@
     window.onload = function() {
       initApp();
     };
-  </script> 
+  </script>
 </head>
 
 <body class="body">

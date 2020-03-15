@@ -1,0 +1,61 @@
+<html>
+    <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="style.css">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Roboto Slab', serif;
+        }
+    </style>
+    </head>
+
+    <body>
+      <div class="container" style="padding-bottom: 50px;">
+        <h3 class="text-center" > Profile Builder</h3>
+        <hr size="20" width="75%" align="center" color="green">
+    <br>
+
+    <h5 class=" text-center" > Upload Profile Picture</h5>
+    <br>
+        <input type="file" id="imgInp">
+        <input type="submit" id="but" text="submit">
+        <!-- <img style="margin-left:25px; border-radius:50%" id=myimg width="100" height="100" /></div> -->
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+<script>
+  
+  // Your web app's Firebase configuration
+  var config = {
+    apiKey: "AIzaSyDFZYD1W5alvk1NgBQmpKq3ts8wS0e1qhM",
+    authDomain: "profile-building.firebaseapp.com",
+    databaseURL: "https://profile-building.firebaseio.com",
+    projectId: "profile-building",
+    storageBucket: "profile-building.appspot.com",
+    messagingSenderId: "257471243972",
+    appId: "1:257471243972:web:914e1ee949036f7d210b91",
+    measurementId: "G-SVBLV1ZQD1"
+  };
+  var app=firebase.initializeApp(config);
+var db = firebase.firestore(app);
+  // Initialize Firebase
+ 
+ 
+  firebase.analytics();
+</script>
+    <script src="file.js"></script>
+    <script src="file_retrieve.js"></script>
+</html>
